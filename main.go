@@ -8,17 +8,17 @@ import (
 
 func main() {
 	fmt.Println("started server....")
-	http.HandleFunc("/", index)
+	http.HandleFunc("/", Index)
 	http.ListenAndServe(":3000", nil)
 }
 
 type Info struct {
-	ID    string  `json:"id"`
+	ID    string `json:"id"`
 	Name  string `json:"name"`
 	Email string `json:"email"`
 }
 
-func index(w http.ResponseWriter, r *http.Request) {
+func Index(w http.ResponseWriter, r *http.Request) {
 	var i = Info{
 		Name:  "steve",
 		Email: "steve@test.com",
